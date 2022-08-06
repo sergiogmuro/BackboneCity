@@ -34,7 +34,7 @@ class ApiController extends Controller
         if (empty($data)) {
             abort(404);
         }
-        
+
         return $this->mapData($settlements);
     }
 
@@ -60,10 +60,10 @@ class ApiController extends Controller
 
         return [
             "zip_code" => $data[0][0],
-            "locality" => Helpers::formatString($data[0][4]),
+            "locality" => Helpers::formatString($data[0][5]),
             "federal_entity" => [
                 "key" => (int)$data[0][7],
-                "name" => Helpers::formatString($data[0][5]),
+                "name" => Helpers::formatString($data[0][4]),
                 "code" => null
             ],
             "settlements" => $settlements,
