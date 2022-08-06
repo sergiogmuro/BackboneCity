@@ -30,6 +30,11 @@ class ApiController extends Controller
                 $settlements[] = $data;
             }
         }
+
+        if (empty($data)) {
+            abort(404);
+        }
+        
         return $this->mapData($settlements);
     }
 
